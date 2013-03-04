@@ -3,7 +3,7 @@ jQuery( function( $ ) {
     harlemMusic.autoplay = false;
     harlemMusic.src = 'harlem_shake.ogg';
 
-    $.fn.jshaker = function () {
+    $.fn.jqHarlemShake = function () {
         var elements = $( this );
         elements.css( 'position', 'relative' );
 
@@ -11,12 +11,12 @@ jQuery( function( $ ) {
         setShaker( elements.get( Math.round( Math.random() * 100 * elements.length ) % elements.length ) );
 
         setTimeout( function() {
-            clearInterval( $.fn.jshaker.interval );
+            clearInterval( $.fn.jqHarlemShake.interval );
             setShaker( elements );
         }, 16000 );
 
         setTimeout( function() {
-            clearInterval( $.fn.jshaker.interval );
+            clearInterval( $.fn.jqHarlemShake.interval );
         }, 30000 );
     };
 
@@ -26,12 +26,12 @@ jQuery( function( $ ) {
     }
 
     function setShaker( elements ) {
-        $.fn.jshaker.interval = setInterval( function() {
-            $.fn.jshaker.shake( elements );
+        $.fn.jqHarlemShake.interval = setInterval( function() {
+            $.fn.jqHarlemShake.shake( elements );
         }, 100 );
     }
 
-    $.fn.jshaker.shake = function( el ){
+    $.fn.jqHarlemShake.shake = function( el ){
         var $el = $( el );
         $el.each( function( i, item ) {
             $item = $( item );
